@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.com.edumatt3";
+option java_outer_classname = "CarsGrpc";
+option objc_class_prefix = "HLW";
+
+package br.com.edumatt3;
+
+service CarsGrpcService {
+  rpc send (CarsGrpcRequest) returns (CarsGrpcReply) {}
+}
+
+message CarsGrpcRequest {
+  string name = 1;
+}
+
+message CarsGrpcReply {
+  string message = 1;
+}
