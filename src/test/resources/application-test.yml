@@ -1,4 +1,9 @@
 datasources:
   default:
-    url: jdbc:tc:postgresql:12:///postgres
-    driverClassName: org.testcontainers.jdbc.ContainerDatabaseDriver
+    url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;
+    driverClassName: org.h2.Driver
+
+#Habilita log do contexto transacional
+logger:
+  levels:
+    io.micronaut.transaction: DEBUG
